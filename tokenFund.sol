@@ -43,3 +43,38 @@ contract assetFund is ERC20, Ownable {
 		return balance.mul(1000).div(totalSupply());
 	}
 
+	// Sell a token held by the fund
+	function removeToken(address _token) public onlyOwner returns(uint256) {
+		// Check if it is the right token
+		for (uint256 i=0;i<tokens.length;i++){
+			if(tokens[i].tokenAddress==_token){
+                	IUniswapV2Factory factory = IUniswapV2Factory(amm.factory());
+              		IUniswapV2Pair pair = IUniswapV2Pair(factory.getPair(amm.WETH(), _token));
+                	(uint112 token0r,uint112 token1r, uint32 bl) = pair.getReserves();
+                	//Calculate estimated output of the swap
+			uint256 amountOut;
+                	if (pair.token0() == amm.WETH()) {
+                    		amountOut = amm.getAmountOut(tokens[i].amount, token1r, token0r);
+                	} else {
+                    		amountOut = amm.getAmountOut(tokens[i].amount, token0r, token1r);
+                	}
+                	//Approve asset transfer to AMM router
+                	IERC20 inToken = IERC20(tokens[i].tokenAddress);
+                	inToken.approve(address(amm),tokens[i].amount);
+                	address[] memory route = new address[](2);
+                	route[0] = _token;
+                	route[1] = amm.WETH();
+                	//Do the swap
+                	uint[] memory amounts = amm.swapExactTokensForTokens(tokens[i].amount, amountOut.mul(85).div(100), route, address(this), block.timestamp.add(60));
+                	//Delete token from list.
+                	tokens[i]=tokens[tokens.length-1];
+                	delete tokens[tokens.length-1];
+                	tokens.pop();
+                	return amounts[amounts.length-1];
+			}
+		}
+        	return 0;
+	}
+
+	
+
