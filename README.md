@@ -15,6 +15,17 @@
 
 ## Walkthrough
 
+### Idea
+
+### Functions
+
+- `getTokens` returns the tokens held by the fund
+- `getShare` can be called by users to see how big are their holdings respect the total supply of the fund (returns the result in perthousand)
+- `removeToken` liquidates the desired asset swapping it with WETH
+- `addToken` adds the desired amount of a token by purchasing it with WETH
+- `retireInvestment` allows an user to retire his investment, payed off in WETH
+- `mint` can be called by the administrator only to create new shares of the fund to an user's address
+
 ## Usage
 
 To use this contract clone locally the present repository, then upload the files cointained in the folder `interfaces` and the `tokenFund.sol` on Remix keeping the same directory type in the workspace.
@@ -28,8 +39,9 @@ Name the environment as you prefer, then click on "SERVER" and enable "Chain For
 ![ganache1](./images/1.ganache.png)
 
 In the box that appears for the custom URL paste the following: https://eth-mainnet.alchemyapi.io/v2/d0Mum9ebnl87zfKOwALWsex9b7o-dGuI; in this way we'll fork the Etherum mainnet. Save the workspace and the local blockchain will be ready.
-Next go back on Remix and click on "Deply and run transaction" button, and as environment choose "Ganache Provider", then past the URL you can see under "RPC server" in your Ganache application (you will see that the first account matches the one in Ganache, at which we will deploy our contract, meaning it will be the administrator).
-To finalize before deployment select the contract `tokenFund.sol` and give the name and symbol of your choice. Since we want to deploy the contract on Uniswap, as administrator address insert `0x7a250d5630b4cf539739df2c5dacb4c659f2488d`.
+Next go back on Remix and click on "Deploy and run transaction" button, and as environment choose "Ganache Provider", then past the URL you can see under "RPC server" in your Ganache application (you will see that the first account matches the one in Ganache, at which we will deploy our contract, meaning it will be the administrator).
+To finalize before deployment select the contract `tokenFund.sol` and give the name and symbol of your choice. Since we want to deploy the contract on Uniswap, as administrator address insert `0x7a250d5630b4cf539739df2c5dacb4c659f2488d`. After these insertions you can click on transact and wait for your contract to be deployed.
+Since Uniswap uses WETH (Wrapped Ether) which is an ERC20 compliant token pegged to ETH, we'll use the `IWETH9.sol` contract to swap ETH with WETH; to do so select this contract in the Remix deploy interface, insert next to the `atAddress` button the WETH contract address `0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2`, then click on the button. Once the contract is loaded you can insert the amount of Ether you want to send (i.e. swap with WETH) and click on `deposit`. After this under `deposit`, you can use the function `transfer` to send the wanted amount of WETH to the tokenized fund contract.
 
 
 ## License
