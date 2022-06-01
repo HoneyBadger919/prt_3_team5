@@ -10,7 +10,7 @@ This project aims to have a tokenized crypto fund that can be owned by users wit
 
 - [Standard ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) Since our tokenized fund share is fungible, me make it compliant to ERC20, in which ERC-20
                    introduces a standard for Fungible Tokens, addtionally, an ERC-20 Token acts just like the ETH, meaning that 1 Token is and will always be equal to
-                   all the other Tokens
+                   all the other Tokens.
 - [Ownable contract](https://docs.openzeppelin.com/contracts/2.x/access-control) so we have power over access control
 - [SafeMath](https://docs.openzeppelin.com/contracts/2.x/api/math) Arithmetic operations in Solidity with added overflow checks, revert the transaction when an                    operation overflows, to perform sound mathematical operation since we are operating with unsigned integers only.
 - [Uniswap](https://docs.uniswap.org/) to give us access to an automated market maker, liquidity pools and pairs, Uniswap protocol is a peer-to-peer1 system designed
