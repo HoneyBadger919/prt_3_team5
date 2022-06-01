@@ -12,10 +12,10 @@ This project aims to have a tokenized crypto fund that can be owned by users wit
                    introduces a standard for Fungible Tokens, addtionally, an ERC-20 Token acts just like the ETH, meaning that 1 Token is and will always be equal to
                    all the other Tokens
 - [Ownable contract](https://docs.openzeppelin.com/contracts/2.x/access-control) so we have power over access control
-- [SafeMath](https://docs.openzeppelin.com/contracts/2.x/api/math) Arithmetic operations in Solidity with added overflow checks, revert the transaction when an /n                  operation overflows, to perform sound mathematical operation since we are operating with unsigned integers only.
+- [SafeMath](https://docs.openzeppelin.com/contracts/2.x/api/math) Arithmetic operations in Solidity with added overflow checks, revert the transaction when an                    operation overflows, to perform sound mathematical operation since we are operating with unsigned integers only.
 - [Uniswap](https://docs.uniswap.org/) to give us access to an automated market maker, liquidity pools and pairs, Uniswap protocol is a peer-to-peer1 system designed
             for exchanging cryptocurrencies (ERC-20 Tokens) on the Ethereum blockchain. 
-- [Ganache](https://trufflesuite.com/ganache/) to develop, deploy, and test our fund dApps in a safe and deterministic environment across the entire development /n 
+- [Ganache](https://trufflesuite.com/ganache/) to develop, deploy, and test our fund dApps in a safe and deterministic environment across the entire development 
             cycle, to create a dummy blockchain on which to test our contract, additionally, Ganache UI is a desktop application supporting both Ethereum and Corda 
             technology. The command-line tool, ganache-cli (formerly known as the TestRPC), is available for Ethereum development
 - [Remix](https://remix.ethereum.org/) Remix IDE allows developing, deploying and administering smart contracts for Ethereum like blockchains, here, used as a
