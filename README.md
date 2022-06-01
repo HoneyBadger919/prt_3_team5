@@ -19,7 +19,7 @@ To create the shares of the fund, the underlying assets will be bought on Uniswa
 ## Walkthrough
 <p align="center">
   <img 
-    src="./images/0.architecture.png"
+    src="./images/0.architecture.PNG"
   >
 </p>
 
