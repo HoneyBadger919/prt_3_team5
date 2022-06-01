@@ -1,3 +1,0 @@
-fork chain on Ganache: https://eth-mainnet.alchemyapi.io/v2/d0Mum9ebnl87zfKOwALWsex9b7o-dGuI
-deploy Fund contract at (Uniswap address): 0x7a250d5630b4cf539739df2c5dacb4c659f2488d
-deploy and send Eth at (WETH contract): 0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2
