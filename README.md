@@ -1,8 +1,11 @@
 # prt_3_team5
 
-# Tokenized Asset Fund
+# Tokenized Crypto Fund
 
 ## Introduction
+
+The aim of this project is to have a tokenized crypto fund that can be owned by users with an Ethereum account. The fund will have an administrator which decides to mint share to a users, keeps liquidity of held underlying in equilibrium, adds and remove tokens from the fund. 
+To create the shares of the fund, the underlying assets will be bought on Uniswap, which allows to have access to market pairs on a decentralized Exchange (DEX).
 
 ## Technology
 
