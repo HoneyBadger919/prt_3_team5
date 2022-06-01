@@ -4,17 +4,22 @@
 
 ## Introduction
 
-The aim of this project is to have a tokenized crypto fund that can be owned by users with an Ethereum account. The fund will have an administrator which decides to mint share to a users, keeps liquidity of held underlying in equilibrium, adds and remove tokens from the fund. 
-To create the shares of the fund, the underlying assets will be bought on Uniswap, which allows to have access to market pairs on a decentralized Exchange (DEX).
+This project aims to have a tokenized crypto fund that can be owned by users with an Ethereum account. The fund will have an administrator which decides to mint share to a user, keeps the liquidity of held underlying in equilibrium, and adds and remove tokens from the fund. To create the shares of the fund, the underlying assets will be bought on Uniswap, which allows access to market pairs on a Decentralized Exchange (DEX).
 
 ## Technology
 
-- [Standard ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) since we want our tokenized fund share to be fungible, me make it compliant to this standard
+- [Standard ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) Since our tokenized fund share is fungible, me make it compliant to ERC20, in which ERC-20
+                   introduces a standard for Fungible Tokens, addtionally, an ERC-20 Token acts just like the ETH, meaning that 1 Token is and will always be equal to
+                   all the other Tokens
 - [Ownable contract](https://docs.openzeppelin.com/contracts/2.x/access-control) so we have power over access control
-- [SafeMath](https://docs.openzeppelin.com/contracts/2.x/api/math) to perform sound mathematical operation because we are operating with unsigned integers only
-- [Uniswap](https://docs.uniswap.org/) to give us access to an automated market maker, liquidity pools and pairs
-- [Ganache](https://trufflesuite.com/ganache/) to create a dummy blockchain on which to test our contract
-- [Remix](https://remix.ethereum.org/) as a compiler and to deploy compiled smart contracts
+- [SafeMath](https://docs.openzeppelin.com/contracts/2.x/api/math) Arithmetic operations in Solidity with added overflow checks, revert the transaction when an /n                  operation overflows, to perform sound mathematical operation since we are operating with unsigned integers only.
+- [Uniswap](https://docs.uniswap.org/) to give us access to an automated market maker, liquidity pools and pairs, Uniswap protocol is a peer-to-peer1 system designed
+            for exchanging cryptocurrencies (ERC-20 Tokens) on the Ethereum blockchain. 
+- [Ganache](https://trufflesuite.com/ganache/) to develop, deploy, and test our fund dApps in a safe and deterministic environment across the entire development /n 
+            cycle, to create a dummy blockchain on which to test our contract, additionally, Ganache UI is a desktop application supporting both Ethereum and Corda 
+            technology. The command-line tool, ganache-cli (formerly known as the TestRPC), is available for Ethereum development
+- [Remix](https://remix.ethereum.org/) Remix IDE allows developing, deploying and administering smart contracts for Ethereum like blockchains, here, used as a
+          compiler and to deploy compiled smart contracts. 
 
 ## Walkthrough
 <p align="center">
@@ -23,7 +28,7 @@ To create the shares of the fund, the underlying assets will be bought on Uniswa
   >
 </p>
 
-We will have an admnistrator, who wll be the deployer of the contract. This administrator interacts with the WETH contract to swap ETH with WETH, in order to be able to purchase tokens on the Uniswap exchange and add them to the fund, by calling the functions of the contract. The administrator can also sell the tokens, swapping them with WETH.  
+There will be an administrator, who will be the deployer of the contract. This administrator interacts with the WETH contract to swap ETH with WETH, to be able to purchase tokens on the Uniswap exchange and add them to the fund, by calling the functions of the contract. The administrator can also sell the tokens, swapping them with WETH.  
 
 ### Idea
 
@@ -41,7 +46,7 @@ An investor can decide at any time to liquidate his position, so all the tokens 
 
 ## Usage
 
-To use this contract clone locally the present repository, then upload the files cointained in the folder `interfaces` and the `tokenFund.sol` on Remix keeping the same directory type in the workspace.
+To use this contract clone locally the present repository, then upload the files contained in the folder `interfaces` and the `tokenFund.sol` on Remix keeping the same directory type in the workspace.
 Once you correctly loaded the files in the Remix IDE you should see the interface like the following image
 
 ![intial_setup](./images/1.setup.png)
