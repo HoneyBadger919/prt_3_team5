@@ -23,7 +23,7 @@ To create the shares of the fund, the underlying assets will be bought on Uniswa
   >
 </p>
 
-We will have an admnistrator, who will be the address of the blockchain with which the contract is deployed. This administrator interacts with the WETH contract to swap ETH with WETH, in order to be able to purchase tokens on the Uniswap exchange and add them to the fund. The administrator can also sell the tokens, swapping them with WETH.  
+We will have an admnistrator, who wll be the deployer of the contract. This administrator interacts with the WETH contract to swap ETH with WETH, in order to be able to purchase tokens on the Uniswap exchange and add them to the fund, by calling the functions of the contract. The administrator can also sell the tokens, swapping them with WETH.  
 
 ### Idea
 
